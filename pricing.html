@@ -300,6 +300,36 @@
       </table>
     </section>
 
+    
+    <!-- ROI Calculator -->
+    <section class="section container fade-in-up" style="margin-bottom: var(--spacing-8);">
+      <div style="background: linear-gradient(135deg, var(--color-primary), #2a2a4a); color: white; padding: var(--spacing-8); border-radius: var(--border-radius-card); display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-6); align-items: center;">
+        <div>
+          <h2 style="color: white;">Calculate Your ROI</h2>
+          <p style="opacity: 0.8; margin-top: var(--spacing-2); margin-bottom: var(--spacing-6);">See how much time and money TableFlow saves you every month by eliminating paper tickets.</p>
+          
+          <label style="display: block; font-weight: 600; margin-bottom: var(--spacing-2);">Average Daily Orders: <span id="orders-val" style="color: var(--color-accent); font-size: 24px; vertical-align: middle;">150</span></label>
+          <input type="range" id="roi-slider" min="50" max="1000" step="10" value="150" style="width: 100%; margin-bottom: var(--spacing-4); accent-color: var(--color-accent); cursor: pointer;">
+          
+          <div style="display: flex; gap: var(--spacing-6);">
+             <div>
+               <div style="font-size: 32px; font-weight: 800; color: var(--color-accent);" id="time-saved">60 hrs</div>
+               <div style="font-size: 14px; opacity: 0.8;">Time Saved / Month</div>
+             </div>
+             <div>
+               <div style="font-size: 32px; font-weight: 800; color: var(--color-accent);" id="paper-saved">4,500</div>
+               <div style="font-size: 14px; opacity: 0.8;">Tickets Saved / Month</div>
+             </div>
+          </div>
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: var(--spacing-6); border-radius: var(--border-radius-element); text-align: center;">
+            <div style="font-size: 64px; font-weight: 800; margin-bottom: var(--spacing-2); color: white;" id="money-saved">$1,200</div>
+            <div style="font-size: 18px; font-weight: 500;">Estimated Value Generated</div>
+            <p style="font-size: 14px; opacity: 0.7; margin-top: var(--spacing-4);">Assuming staff time at $20/hr. TableFlow pays for itself in less than a week.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section container fade-in-up faq-section">
       <h2 class="section-title">Frequently Asked Questions</h2>
