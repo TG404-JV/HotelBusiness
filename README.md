@@ -1,4 +1,4 @@
-# HotelBusinessSite
+# HotelBusiness
 
 A minimal, clean, and clear SaaS-style business website for TableFlow - Hotel & Restaurant Management System. Built with semantic HTML, vanilla CSS (Light mode), and pure JS.
 
