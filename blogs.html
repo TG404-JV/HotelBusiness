@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TableFlow Blog | Restaurant Management Insights</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  
+  <style>
+    .blog-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--spacing-6);
+      margin-top: var(--spacing-8);
+    }
+    
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-card);
+      background-color: var(--color-card-bg);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: var(--color-border);
+    }
+    
+    .blog-content {
+      padding: var(--spacing-4);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    
+    .blog-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--spacing-2);
+    }
+    
+    .blog-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: var(--spacing-2);
+      color: var(--color-primary);
+    }
+    
+    .blog-desc {
+      color: var(--color-text-muted);
+      margin-bottom: var(--spacing-4);
+      flex: 1;
+    }
+    
+    .read-more {
+      font-weight: 600;
+      color: var(--color-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .read-more:hover {
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-brand">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          TableFlow
+        </a>
+        <div class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blogs.html">Blog</a>
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary">Start Free Trial</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container blog-hero fade-in-up">
+      <h1>The TableFlow <span style="color: var(--color-accent);">Blog</span></h1>
+      <p class="section-subtitle" style="margin-top: var(--spacing-4);">Insights, tips, and strategies for modern restaurant management.</p>
+      
+      <div class="blog-grid fade-in-up delay-100">
+        
+        <!-- Blog 1 -->
+        <article class="blog-card">
+          <img src="assets/images/dashboard_ui.png" alt="Zero-Paper Kitchens" class="blog-image">
+          <div class="blog-content">
+            <div class="blog-meta">Operations • 5 Min Read</div>
+            <h2 class="blog-title">How Zero-Paper Kitchens Improve Turnaround Time by 30%</h2>
+            <p class="blog-desc">Physical tickets get lost, get greasy, and cause shouting matches. Learn how digitizing your KOT saves hours every week.</p>
+            <a href="#" class="read-more">Read article &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Blog 2 -->
+        <article class="blog-card">
+          <img src="assets/images/qr_ui.png" alt="QR Menus" class="blog-image">
+          <div class="blog-content">
+            <div class="blog-meta">Growth • 4 Min Read</div>
+            <h2 class="blog-title">5 Ways Interactive QR Menus Increase Your Drink Cross-Sells</h2>
+            <p class="blog-desc">A static PDF menu is a missed opportunity. Find out how rich visuals and smart suggestions can bump your average order value.</p>
+            <a href="#" class="read-more">Read article &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Blog 3 -->
+        <article class="blog-card">
+          <img src="assets/images/waiter_ui.png" alt="Table Organization" class="blog-image">
+          <div class="blog-content">
+            <div class="blog-meta">Staffing • 6 Min Read</div>
+            <h2 class="blog-title">Mastering Table Organization for the Holiday Rush</h2>
+            <p class="blog-desc">When demand speaks, efficient multi-outlet coordination keeps your staff sane and your customers happy.</p>
+            <a href="#" class="read-more">Read article &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" style="margin-top: var(--spacing-12);">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="nav-brand" style="margin-bottom: var(--spacing-2);">TableFlow</div>
+          <p style="color: var(--color-text-muted); max-width: 250px;">The modern operating system for the hospitality industry. Zero paper, maximum efficiency.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">System Status</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 TableFlow Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

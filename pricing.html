@@ -1,0 +1,402 @@
+<!-- d:/Projects/Web/Hotel_Managment_Business_site/tableflow-website/pricing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TableFlow Pricing | Honest & Simple</title>
+  
+  <meta property="og:title" content="TableFlow Pricing">
+  <meta property="og:description" content="Simple, honest pricing. No hidden fees. Select a plan to scale your restaurant.">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TableFlow Pricing">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  
+  <style>
+    .pricing-hero { padding: 140px 0 60px; text-align: center; }
+    
+    .billing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-8);
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      background-color: var(--color-accent);
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    
+    .toggle-switch.annual::after {
+      transform: translateX(24px);
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-4);
+      align-items: stretch;
+    }
+    
+    .plan-card {
+      padding: var(--spacing-6);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--color-border);
+    }
+    
+    .plan-price {
+      font-size: 48px;
+      font-weight: 800;
+      margin: var(--spacing-3) 0;
+      color: var(--color-primary);
+    }
+    [data-theme="dark"] .plan-price { color: #FFFFFF; }
+    
+    .plan-features {
+      margin: var(--spacing-4) 0;
+      flex: 1;
+    }
+    
+    .plan-features li {
+      margin-bottom: var(--spacing-2);
+      display: flex;
+      gap: var(--spacing-2);
+    }
+    
+    .plan-features li::before {
+      content: '✓';
+      color: var(--color-success);
+      font-weight: bold;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--spacing-8);
+      background-color: var(--color-card-bg);
+      border-radius: var(--border-radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    
+    .comparison-table th, .comparison-table td {
+      padding: var(--spacing-3);
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .comparison-table th {
+      background-color: rgba(0,0,0,0.02);
+      font-weight: 600;
+    }
+    [data-theme="dark"] .comparison-table th { background-color: rgba(255,255,255,0.02); }
+    
+    .comparison-table td:first-child, .comparison-table th:first-child {
+      text-align: left;
+    }
+    
+    /* Accordion */
+    .faq-section { max-width: 800px; margin: 0 auto; }
+    
+    .accordion {
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-element);
+      margin-bottom: var(--spacing-2);
+      overflow: hidden;
+      background-color: var(--color-card-bg);
+    }
+    
+    .accordion-header {
+      padding: var(--spacing-3) var(--spacing-4);
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .accordion-header::after {
+      content: '+';
+      font-size: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .accordion.open .accordion-header::after {
+      transform: rotate(45deg);
+    }
+    
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: var(--color-bg);
+    }
+    
+    .accordion-content p {
+      padding: var(--spacing-3) var(--spacing-4);
+      color: var(--color-text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .pricing-cards { grid-template-columns: 1fr; }
+      .comparison-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-brand">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          TableFlow
+        </a>
+        <div class="nav-links">
+          <a href="features.html">Features</a>
+          <a href="pricing.html" class="active">Pricing</a>
+          <a href="blogs.html">Blog</a>
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary">Start Free Trial</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container pricing-hero fade-in-up">
+      <h1>Simple, honest pricing</h1>
+      <p class="section-subtitle">No hidden fees, no per-transaction cuts. Just a simple monthly subscription.</p>
+      
+      <div class="billing-toggle">
+        <span style="font-weight: 500;">Monthly</span>
+        <div class="toggle-switch" id="billing-toggle-btn" aria-label="Toggle Annual Billing"></div>
+        <span style="font-weight: 500;">Annual <span class="badge" style="margin-left: 8px;">Save 20%</span></span>
+      </div>
+      
+      <div class="pricing-cards">
+        <!-- Starter -->
+        <article class="card plan-card">
+          <h2>Starter</h2>
+          <div class="plan-price" id="price-starter">₹999<span class="small-text text-muted">/mo</span></div>
+          <p class="body-text text-muted">For small cafes and diners.</p>
+          <ul class="plan-features text-left">
+            <li>Up to 2 outlets</li>
+            <li>1 KDS screen</li>
+            <li>3 waiter app licenses</li>
+            <li>Basic analytics</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#" class="btn btn-secondary" style="width: 100%;">Start 14-day Trial</a>
+        </article>
+        
+        <!-- Growth -->
+        <article class="card plan-card" style="border: 2px solid var(--color-accent); transform: scale(1.05); box-shadow: var(--shadow-hover); z-index: 1;">
+          <div class="badge" style="margin: 0 auto; width: fit-content; margin-bottom: var(--spacing-2);">Most Popular</div>
+          <h2>Growth</h2>
+          <div class="plan-price" id="price-growth">₹2,499<span class="small-text text-muted">/mo</span></div>
+          <p class="body-text text-muted">For standard and growing restaurants.</p>
+          <ul class="plan-features text-left">
+            <li>Up to 5 outlets</li>
+            <li>3 KDS screens</li>
+            <li>10 waiter app licenses</li>
+            <li>QR Code Ordering</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="width: 100%;">Start 14-day Trial</a>
+        </article>
+        
+        <!-- Enterprise -->
+        <article class="card plan-card">
+          <h2>Enterprise</h2>
+          <div class="plan-price">Custom</div>
+          <p class="body-text text-muted">For multi-city chains and hotels.</p>
+          <ul class="plan-features text-left">
+            <li>Unlimited outlets</li>
+            <li>White-label option</li>
+            <li>Multi-location analytics</li>
+            <li>Dedicated account manager</li>
+            <li>SLA guarantee</li>
+          </ul>
+          <a href="#" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container fade-in-up">
+      <h2 class="section-title">Compare Features</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Features</th>
+            <th>Starter</th>
+            <th>Growth</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wait Order App</td>
+            <td>3 licenses</td>
+            <td>10 licenses</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Kitchen Display</td>
+            <td>1 screen</td>
+            <td>3 screens</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>QR Ordering</td>
+            <td>-</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Analytics</td>
+            <td>Basic</td>
+            <td>Advanced</td>
+            <td>Custom BI</td>
+          </tr>
+
+          <tr>
+            <td>Support</td>
+            <td>Email</td>
+            <td>Priority</td>
+            <td>Dedicated Account Manager</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container fade-in-up faq-section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div style="margin-top: var(--spacing-6);">
+        <div class="accordion">
+          <div class="accordion-header">Is there a free trial?</div>
+          <div class="accordion-content"><p>Yes, all plans come with a 14-day free trial. No credit card required.</p></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header">Do I need special hardware?</div>
+          <div class="accordion-content"><p>No, TableFlow runs on standard Android phones, tablets, and any modern web browser. You don't need expensive proprietary hardware.</p></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header">Can I upgrade or downgrade?</div>
+          <div class="accordion-content"><p>Absolutely. You can change your plan at any time directly from the dashboard.</p></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header">Do you take a cut of my sales?</div>
+          <div class="accordion-content"><p>Never. We only charge the flat monthly subscription fee regardless of your volume.</p></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header">How hard is the setup?</div>
+          <div class="accordion-content"><p>Most restaurants are fully set up in under 2 hours. Enterprise setups may take slightly longer for custom integrations.</p></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header">Is offline mode supported?</div>
+          <div class="accordion-content"><p>The Waiter app can temporarily queue orders if Wi-Fi drops, and will sync securely once reconnected.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="nav-brand" style="margin-bottom: var(--spacing-2);">TableFlow</div>
+          <p style="color: var(--color-text-muted); max-width: 250px;">The modern operating system for the hospitality industry.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">System Status</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 TableFlow Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('billing-toggle-btn');
+      const pStarter = document.getElementById('price-starter');
+      const pGrowth = document.getElementById('price-growth');
+      let isAnnual = false;
+      
+      if(toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          isAnnual = !isAnnual;
+          toggleBtn.classList.toggle('annual');
+          
+          if (isAnnual) {
+            pStarter.innerHTML = '₹799<span class="small-text text-muted">/mo</span>';
+            pGrowth.innerHTML = '₹1,999<span class="small-text text-muted">/mo</span>';
+          } else {
+            pStarter.innerHTML = '₹999<span class="small-text text-muted">/mo</span>';
+            pGrowth.innerHTML = '₹2,499<span class="small-text text-muted">/mo</span>';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
